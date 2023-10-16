@@ -1,0 +1,36 @@
+<!-- <p>edit-asset works!</p> -->
+<html>
+<body>
+  <div class="container mt-0">
+    <div class="row">
+        <div class="col-md-12">
+    <h2>Edit Asset</h2>
+    
+    <form [formGroup]="assetForm" (ngSubmit)="saveAsset()">
+      <div class="form-group">
+        <label for="assetName">Asset Name</label>
+        <input type="text" id="assetName" class="form-control" formControlName="assetName">
+      </div>
+      <div class="form-group">
+        <label for="assetType">Asset Type</label>
+        <input type="text" id="assetType" class="form-control" formControlName="assetType">
+      </div>
+      <div class="form-group">
+        <label for="assetPrice">Asset Price</label>
+        <input type="text" id="assetPrice" class="form-control" formControlName="assetPrice">
+      </div>
+      <div class="form-group">
+        <label for="assetStatus">Asset Status</label>
+        <input type="text" id="assetStatus" class="form-control" formControlName="assetStatus">
+      </div>
+      <div class="form-group">
+        <label for="assetQuantity">Asset Quantity</label>
+        <input type="text" id="assetQuantity" class="form-control" formControlName="assetQuantity">
+      </div>
+      <button type="submit" class="btn btn-primary" style="margin-inline-end: 0.3cm;border-color: rgb(50, 74, 255);border-radius: 15%;border-width: 0.1cm;">Save</button>
+    </form>
+</div>
+</div>
+</div>
+</body>
+</html>

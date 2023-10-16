@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prowork Inventory System</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="gradient-custom-2">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="\assets\images\ProTIM Logo.png" alt="Company Logo" width="150">
+            </a>
+            <button class="btn btn-danger ml-auto" routerLink="/">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="list-group grid-4">
+                    <div routerLink="/add" class="list-group-item list-group-item-action size text-center">Add Asset<p>Add Assets here</p></div>
+                    <div routerLink="/view" class="list-group-item list-group-item-action size text-center">View Asset<p>View your Assets here</p></div>
+                    <div routerLink="/search" class="list-group-item list-group-item-action size text-center">Search<p>Search the Assets by name </p></div>
+                    <div routerLink="/suppliers" class="list-group-item list-group-item-action size text-center">Supplier Info<p>Supplier info's will be here</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

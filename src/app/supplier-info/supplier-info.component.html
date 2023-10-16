@@ -1,0 +1,79 @@
+<!-- <p>supplier-info works!</p> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prowork Inventory System</title>
+  </head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+      <a class="navbar-brand" href="#">
+          <img src="\assets\images\ProTIM Logo.png" alt="Company Logo" width="150">
+      </a>
+      <!-- Use the navbar-nav class for horizontal navigation -->
+      <ul class="navbar-nav ml-auto">
+          <!-- Each list item represents a navigation link -->
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/add">Add Asset</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/view">View Asset</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/search">Search</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/suppliers">Supplier Info</a>
+          </li>
+      </ul>
+      <button class="btn btn-danger ml-2" routerLink="/">Logout</button>
+  </div>
+</nav>
+<!-- supplier-info.component.html -->
+<body>
+<div class="container mt-0">
+    <div class="row">
+      <!-- <div class="col-md-3"> -->
+      </div>
+      <!-- <div class="col-md-9"> -->
+        <h2>Supplier Information</h2>
+  
+        <!-- Display supplier information here -->
+        <table class="table table-striped">
+          <thead>
+            <tr>
+                <th>Supplier Id</th>
+              <th>Supplier Name</th>
+              <th>Contact Person</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Supplier Location</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!--Display your supplier details in rows -->
+            <tr *ngFor="let supplier of suppliers">
+              <td>{{supplier.id }}</td>
+              <td>{{ supplier.name }}</td>
+              <td>{{ supplier.contactPerson }}</td>
+              <td>{{ supplier.email }}</td>
+              <td>{{ supplier.phone }}</td>
+              <td>{{ supplier.location }}</td>
+              <td>
+              <button class="btn btn-primary" (click)="updateSupplier(supplier.id)" style="margin-inline-end: 0.3cm;border-color: rgb(50, 74, 255);border-radius: 15%;border-width: 0.1cm;">Edit</button>
+              <button class="btn btn-danger" (click)="deleteSupplier(supplier.id)" style="margin-inline: 0.4cm;">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <button  class="btn btn-primary"  type="submit" routerLink="/add-supplier" style="border-color: rgb(50, 74, 255);border-radius: 30%;border-width: 0.1cm;">Add Supplier</button>
+      <!-- </div> -->
+    <!-- </div> -->
+  </div>
+</body>
+</html>
+  <!-- <footer class="bg-light text-center py-3">
+    <p>Contact Us: protim@gmail.com | Phone: +1234567890 | LinkedIn: </p>
+</footer> -->
+  

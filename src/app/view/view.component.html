@@ -1,0 +1,84 @@
+<!-- <p>view works!</p> -->
+<!-- view-asset.component.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prowork Inventory System</title>
+  </head>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+      <a class="navbar-brand" href="#">
+          <img src="\assets\images\ProTIM Logo.png" alt="Company Logo" width="150">
+      </a>
+      
+      <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/add">Add Asset</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/view">View Asset</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/search">Search</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/suppliers">Supplier Info</a>
+          </li>
+      </ul>
+      <button class="btn btn-danger ml-2" routerLink="/">Logout</button>
+  </div>
+</nav>
+<body>
+<div class="container mt-0" *ngIf="assets && assets.length > 0">
+<h2>View Assets</h2>
+
+<!-- Add this code to your view-asset.component.html -->
+<table class="table">
+  <thead>
+    <tr>
+      <th>Asset ID</th>
+      <th>Asset Type</th>
+      <th>Asset Name</th>
+      <th>Asset Price</th>
+      <th>IP Address</th>
+      <th>Asset Status</th>
+      <th>Asset Quantity</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <!-- ... -->
+<tbody>
+  <!-- <ng-container *ngFor="let assetType of ['Switches', 'Routers', 'Cables']"> -->
+    <tr *ngFor="let asset of assets">
+      <!-- <ng-container *ngIf="asset.assetType === assetType"> -->
+        <td>{{ asset.assetId }}</td>
+        <td>{{ asset.assetType }}</td>
+        <td>{{ asset.assetName }}</td>
+        <td>{{ asset.assetPrice }}</td>
+        <td>{{ asset.ipAddress }}</td>
+        <td>{{ asset.assetStatus }}</td>
+        <td>{{ asset.assetQuantity }}</td>
+        <td>
+          <!-- Edit Button -->
+          <button class="btn btn-primary" (click)="editAsset(asset.assetId)" style="margin-inline-end: 0.3cm;border-color: rgb(50, 74, 255);border-radius: 15%;border-width: 0.1cm;">Edit</button>
+
+          <!-- Delete Button -->
+          <button class="btn btn-danger" (click)="deleteAsset(asset.assetId)" style="border-color: rgb(205, 4, 4);border-radius: 15%;border-width: 0.1cm;">Delete</button>
+        </td>
+      <!-- </ng-container> -->
+    </tr>
+  <!-- </ng-container> -->
+</tbody>
+<!-- ... -->
+
+</table>
+
+
+</div>
+
+</body>
+</html>

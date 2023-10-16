@@ -1,0 +1,81 @@
+<!-- <p>search works!</p> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prowork Inventory System</title>
+  </head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+      <a class="navbar-brand" href="#">
+          <img src="\assets\images\ProTIM Logo.png" alt="Company Logo" width="150">
+      </a>
+      <!-- Use the navbar-nav class for horizontal navigation -->
+      <ul class="navbar-nav ml-auto">
+          <!-- Each list item represents a navigation link -->
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/add">Add Asset</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/view">View Asset</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/search">Search</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/suppliers">Supplier Info</a>
+          </li>
+      </ul>
+      <button class="btn btn-danger ml-2" routerLink="/">Logout</button>
+  </div>
+</nav>
+<body>
+<div class="container mt-0">
+    <h2>Search Assets</h2>
+
+    <div class="form-group">
+      <input type="text"  class="form-control"  placeholder="Enter search query"  [(ngModel)]="searchQuery"/>
+    </div>
+    <button class="btn btn-primary" (click)="performSearch()" style="margin-inline-end: 0.3cm;border-color: rgb(50, 74, 255);border-radius: 15%;border-width: 0.1cm;">Search</button>
+  
+    <div *ngIf="searchResults.length > 0">
+      <h3>Search Results</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Asset ID</th>
+            <th>Asset Type</th>
+            <th>Asset Name</th>
+            <th>Asset Price</th>
+            <th>IP Address</th>
+            <th>Asset Status</th>
+            <th>Asset Quantity</th>
+    
+          </tr>
+        </thead>
+        <!-- ... -->
+      <tbody>
+        <!-- <ng-container *ngFor="let assetType of ['Switches', 'Routers', 'Cables']"> -->
+          <tr *ngFor="let asset of assets">
+            <!-- <ng-container *ngIf="asset.assetType === assetType"> -->
+              <td>{{ asset.assetId }}</td>
+              <td>{{ asset.assetType }}</td>
+              <td>{{ asset.assetName }}</td>
+              <td>{{ asset.assetPrice }}</td>
+              <td>{{ asset.ipAddress }}</td>
+              <td>{{ asset.assetStatus }}</td>
+              <td>{{ asset.assetQuantity }}</td>
+            <!-- </ng-container> -->
+          </tr>
+        <!-- </ng-container> -->
+      </tbody>
+      <!-- ... -->
+      
+      </table>
+      
+    </div>
+  </div>
+</body>
+</html>
+  
